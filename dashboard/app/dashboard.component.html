@@ -1,0 +1,17 @@
+<!-- <h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
+    <div class="module hero">
+      <h4></h4>
+    </div>
+  </div>
+</div> -->
+
+<div class="card" *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
+  <img class="card-img-top" src="http://lorempixel.com/output/nature-q-c-318-180-5.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">{{hero.name}}</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
