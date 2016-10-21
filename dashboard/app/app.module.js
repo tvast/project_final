@@ -25,6 +25,7 @@ var hero_service_1 = require('./hero.service');
 var persons_service_1 = require('./persons.service');
 var hero_search_component_1 = require('./hero-search.component');
 var app_routing_1 = require('./app.routing');
+var app_constants_1 = require('./app.constants');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -47,7 +48,8 @@ var AppModule = (function () {
             ],
             providers: [
                 hero_service_1.HeroService,
-                persons_service_1.PersonsService
+                persons_service_1.DataService,
+                app_constants_1.Configuration
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

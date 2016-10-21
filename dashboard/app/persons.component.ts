@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { Persons }        from './persons';
-import { PersonsService } from './persons.service';
+import { DataService } from './persons.service';
 
 @Component({
   selector: 'persons',
@@ -15,8 +15,9 @@ export class PersonsDetailComponent implements OnInit {
   persons : Persons[];
 
   constructor(
-    private personsService: PersonsService,
-    private route: ActivatedRoute) {
+    private personsService: DataService,
+    // private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit(): void {
@@ -26,7 +27,18 @@ export class PersonsDetailComponent implements OnInit {
     //     .then(hero => this.hero = hero);
     // });
     // this.personsService.getPersons()
-    //   .then(heroes => this.persons = person);
+      // .then(heroes => this.persons = person);
+    console.log('coucou');
+    this.statsStatutAlertchange()
+  }
+
+  statsStatutAlertchange() {
+
+    this.personsService.GetAll().subscribe(
+      persons => {
+        this.persons = persons;
+      }
+    );
   }
 
   // save(): void {
