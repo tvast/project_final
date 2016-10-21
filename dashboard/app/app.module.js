@@ -18,9 +18,11 @@ var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
 var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard.component');
+var persons_component_1 = require('./persons.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
+var persons_service_1 = require('./persons.service');
 var hero_search_component_1 = require('./hero-search.component');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
@@ -40,10 +42,12 @@ var AppModule = (function () {
                 dashboard_component_1.DashboardComponent,
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
-                hero_search_component_1.HeroSearchComponent
+                hero_search_component_1.HeroSearchComponent,
+                persons_component_1.PersonsDetailComponent
             ],
             providers: [
                 hero_service_1.HeroService,
+                persons_service_1.PersonsService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

@@ -11,9 +11,11 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
+import { PersonsDetailComponent }   from './persons.component';
 import { HeroesComponent }      from './heroes.component';
 import { HeroDetailComponent }  from './hero-detail.component';
 import { HeroService }          from './hero.service';
+import { PersonsService }          from './persons.service';
 import { HeroSearchComponent }  from './hero-search.component';
 import { routing }              from './app.routing';
 
@@ -30,10 +32,12 @@ import { routing }              from './app.routing';
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    PersonsDetailComponent
   ],
   providers: [
     HeroService,
+    PersonsService
   ],
   bootstrap: [ AppComponent ]
 })
