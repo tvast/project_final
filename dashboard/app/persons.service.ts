@@ -1,8 +1,10 @@
+//http://offering.solutions/articles/angular/consuming-a-rest-api-with-angular-2-http-service-in-typescript/
+
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map'
 import { Observable } from 'rxjs/Observable';
-// import { MyTypedItem } from '../models/MyTypedItem';
+// import { person } from '../models/person';
 import { Configuration } from './app.constants';
 import { Persons } from './persons';
 
@@ -27,29 +29,29 @@ export class DataService {
     //         // .catch(this.handleError)
     // }
 
-    public GetAll = (): Observable<MyTypedItem[]> => {
+    public GetAll = (): Observable<Person[]> => {
         return this._http.get(this.actionUrl)
-            .map((response: Response) => <MyTypedItem[]>response.json())
+            .map((response: Response) => <Person[]>response.json())
             .catch(this.handleError);
     }
 
-    public GetSingle = (id: number): Observable<MyTypedItem> => {
+    public GetSingle = (id: number): Observable<Person> => {
         return this._http.get(this.actionUrl + id)
-            .map((response: Response) => <MyTypedItem>response.json())
+            .map((response: Response) => <Person>response.json())
             .catch(this.handleError);
     }
 
-    public Add = (itemName: string): Observable<MyTypedItem> => {
+    public Add = (itemName: string): Observable<Person> => {
         let toAdd = JSON.stringify({ ItemName: itemName });
 
         return this._http.post(this.actionUrl, toAdd, { headers: this.headers })
-            .map((response: Response) => <MyTypedItem>response.json())
+            .map((response: Response) => <Person>response.json())
             .catch(this.handleError);
     }
 
-    public Update = (id: number, itemToUpdate: MyTypedItem): Observable<MyTypedItem> => {
+    public Update = (id: number, itemToUpdate: Person): Observable<Person> => {
         return this._http.put(this.actionUrl + id, JSON.stringify(itemToUpdate), { headers: this.headers })
-            .map((response: Response) => <MyTypedItem>response.json())
+            .map((response: Response) => <Person>response.json())
             .catch(this.handleError);
     }
 
@@ -62,6 +64,7 @@ export class DataService {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     }
+  }
 
     // import { Injectable }    from '@angular/core';
     // import { Headers, Http } from '@angular/http';
