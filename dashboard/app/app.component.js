@@ -30,7 +30,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <nav class=\"navbar navbar-light bg-faded\">\n      <a class=\"navbar-brand\" href=\"#\">{{title}}</a>\n      <ul class=\"nav navbar-nav\">\n        <li class=\"nav-item\">\n          <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n        </li>\n        <li class=\"nav-item\">\n          <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n        </li>\n        <li><hero-search></hero-search></li>\n      </ul>\n\n    </nav>\n    <router-outlet></router-outlet>\n  ",
+            template: "\n    <nav class=\"navbar navbar-light bg-faded\">\n      <a class=\"navbar-brand\" href=\"#\">{{title}}</a>\n      <ul class=\"nav navbar-nav\">\n        <li class=\"nav-item\">\n          <a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n        </li>\n        <li class=\"nav-item\">\n          <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n        </li>\n        <li class=\"nav-item\">\n          <a routerLink=\"/persons\" routerLinkActive=\"active\">persons</a>\n        </li>\n        <li><hero-search></hero-search></li>\n      </ul>\n\n    </nav>\n    <router-outlet></router-outlet>\n  ",
             styleUrls: ['app/app.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])

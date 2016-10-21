@@ -17,6 +17,9 @@ import { HeroService } from './hero.service';
         <li class="nav-item">
           <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
         </li>
+        <li class="nav-item">
+          <a routerLink="/persons" routerLinkActive="active">persons</a>
+        </li>
         <li><hero-search></hero-search></li>
       </ul>
 
