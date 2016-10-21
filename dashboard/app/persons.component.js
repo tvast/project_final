@@ -9,12 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var persons_service_1 = require('./persons.service');
 var PersonsDetailComponent = (function () {
-    function PersonsDetailComponent(personsService, route) {
+    function PersonsDetailComponent(personsService) {
         this.personsService = personsService;
-        this.route = route;
     }
     PersonsDetailComponent.prototype.ngOnInit = function () {
         // this.route.params.forEach((params: Params) => {
@@ -23,14 +21,22 @@ var PersonsDetailComponent = (function () {
         //     .then(hero => this.hero = hero);
         // });
         // this.personsService.getPersons()
-        //   .then(heroes => this.persons = person);
+        // .then(heroes => this.persons = person);
+        console.log('coucou');
+        this.statsStatutAlertchange();
+    };
+    PersonsDetailComponent.prototype.statsStatutAlertchange = function () {
+        var _this = this;
+        this.personsService.GetAll().subscribe(function (persons) {
+            _this.persons = persons;
+        });
     };
     PersonsDetailComponent = __decorate([
         core_1.Component({
             selector: 'persons',
             templateUrl: 'app/persons.component.html',
         }), 
-        __metadata('design:paramtypes', [persons_service_1.PersonsService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [persons_service_1.DataService])
     ], PersonsDetailComponent);
     return PersonsDetailComponent;
 }());
