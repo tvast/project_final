@@ -1,3 +1,4 @@
+//FROM THIS TUTORIAL :  http://adrianmejia.com/blog/2014/10/03/mean-stack-tutorial-mongodb-expressjs-angularjs-nodejs/
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,10 +14,10 @@ var app = express();
 // load mongoose package
 var mongoose = require('mongoose');
 
-// Use native Node promises
+// Use native Node promiseshttp://adrianmejia.com/blog/2014/10/03/mean-stack-tutorial-mongodb-expressjs-angularjs-nodejs/
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/todo-api')
+mongoose.connect('mongodb://localhost/todo-api') //mongodb://test:test@waffle.modulusmongo.net:27017/yzY5qewy
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
